@@ -1,22 +1,35 @@
 angular.module('app')
-.config(function($stateProvider) {
-    var productsState = {
-      name: 'products',
-      url: '/products',
-      component: 'products'
-    };
-    var productState = {
-      name: 'product',
-      url: '/product/{{id}}',
-      component: 'product'
-    };
-    // var backState = {
-    //   name: 'back',
-    //   url: '/',
-    //   component: 'back'
-    // }
+.config(function($stateProvider){
 
-    $stateProvider.state(productsState);
-    $stateProvider.state(productState);
-    // $stateProvider.state(backState);
-  });
+var productsState = {
+	name:'products',
+	url:'/products',
+	component:'products'
+	};
+	
+$stateProvider.state(productsState);
+
+var productState = {
+	name:'product',
+	url:'/product/:id',
+	component:'product'
+	};
+
+$stateProvider.state(productState);
+
+var cartState = {
+	name:'cart',
+	url:'/cart',
+	component:'cart'
+	};
+
+$stateProvider.state(cartState);
+
+var checkoutState = {
+	name:'checkout',
+	url:'/checkout',
+	component:'checkout'
+	};
+
+$stateProvider.state(checkoutState);
+});

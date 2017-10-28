@@ -1,5 +1,5 @@
-function productsController($scope, shopingCart){
-    $scope.getItems = function(){
-        return shopingCart.getItems();
-    }
+function productsController($scope,shopingCart,$stateParams){
+	$scope.getProducts = function(){
+		return shopingCart.getItems();
+	}
 }

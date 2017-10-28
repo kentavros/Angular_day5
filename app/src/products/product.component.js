@@ -1,5 +1,5 @@
 angular.module('app')
 .component('product',{
-    templateUrl: 'src/product/product.html',
-    controller: productController
-})
+	templateUrl:'./src/products/product.html',
+	controller: productController
+});

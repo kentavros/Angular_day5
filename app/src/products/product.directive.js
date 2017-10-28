@@ -1,9 +1,16 @@
 angular.module('app')
-.directive('product', function(){
-    return {
-        template: '<h1>ffffffff</h1>',
-        controller: function($scope, shopingCart){
-            $scope.product = shopingCart.getProduct(id);
-        }   
-    }
+.directive('productDirective',function(){
+	return {
+		template: '<p>Id: {{id}}</p><p>Name: {{name}}</p><p>Detail: {{description}}</p>Price: {{price}}</p>',
+		scope:{
+			productId:'='
+		},
+		controller: function($scope,shopingCart){
+			var obj = shopingCart.getProductById($scope.productId)
+			$scope.name = obj.name;
+			$scope.id = obj.id;
+			$scope.description = obj.description;	
+			$scope.price = obj.price;	
+		}
+	};
 });
